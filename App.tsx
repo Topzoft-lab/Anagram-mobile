@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from "react";
+import { useFonts } from "expo-font";
+import { StatusBar } from "expo-status-bar";
+import RootNavigator from "./navigations/RootNavigator";
+import { Text, TextStyle, View } from "react-native";
 
-export default function App() {
+const App = () => {
+  const [fontsLoaded] = useFonts({
+    "Kalam-light": require("./assets/fonts/Kalam/Kalam-Light.ttf"),
+    Kalam: require("./assets/fonts/Kalam/Kalam-Regular.ttf"),
+    "Kalam-Bold": require("./assets/fonts/Kalam/Kalam-Bold.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style="light" />
+      {/* <View>
+        <Text style={{ fontFamily: "Kalam", fontSize: 24 }}>Hello world</Text>
+      </View> */}
+      <RootNavigator />
+    </>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
