@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
         <Logo />
         <Title>Anagrams</Title>
         <MenuItem>
-          <GameListItem text="New Game" onPress={{}}></GameListItem>
+          <GameListItem text="New Game" onPress={handleStartGame}></GameListItem>
           <GameListItem text="Continue" onPress={{}}></GameListItem>
           <GameListItem text="High Score" onPress={{}}></GameListItem>
         </MenuItem>

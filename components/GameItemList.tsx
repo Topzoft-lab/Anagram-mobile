@@ -7,7 +7,7 @@ const GameListItem = ({ text, onPress }) => {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
 
   const handlePress = () => {
-    setBackgroundColor("#79B4B7");
+    onPress();
   };
 
   return (
